@@ -12,9 +12,9 @@ describe('Homepage authentication required', () => {
     it('create a user account', () => {
       homepage.clickConnect()
       user.createAccountButton()
-      user.email()
-      user.password()
-      user.passwordRepeat()
+      user.enterEmail()
+      user.enterPassword()
+      user.reEnterPassword()
       user.clickOnCreate()
     })
 })

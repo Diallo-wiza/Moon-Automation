@@ -26,7 +26,7 @@ export const user = {
           .click()
     },
 
-    email() {
+    enterEmail() {
         cy.get('[name="email"]')
           .invoke('attr', 'placeholder')
           .should('contain', 'Email *')
@@ -34,7 +34,7 @@ export const user = {
           .click()
           .type(Cypress.env("userAccount"))
     },
-    password() {
+    enterPassword() {
         cy.get('[name="password"]')
           .invoke('attr', 'placeholder')
           .should('contain', 'Mot de passe *')
@@ -42,7 +42,7 @@ export const user = {
           .click()
           .type(Cypress.env("passAccount"))
     },
-    passwordRepeat() {
+    reEnterPassword() {
         cy.get('[name="passwordConf"]')
           .invoke('attr', 'placeholder')
           .should('contain', 'Répéter le mot de passe *')
@@ -57,7 +57,7 @@ export const user = {
           .click({multiple: true})
     },
 
-    emailConnect() {
+    fillEmail() {
         cy.get('[name="connectEmail"]')
           .invoke('attr', 'placeholder')
           .should('contain', 'Adresse email *')
@@ -66,7 +66,7 @@ export const user = {
           .type(Cypress.env("userAccount"))
     },
 
-    passConnect() {
+    fillPassword() {
         cy.get('[name="connectPassword"]')
           .invoke('attr', 'placeholder')
           .should('contain', 'Mot de passe *')
@@ -91,5 +91,11 @@ export const user = {
         cy.get('[name="lastName"]')
           .click()
           .type('DIALLO')
+    }
+}
+
+export const usersJson = {
+    enterJsonMail() {
+        return cy.get('[name="email"]').type(this.data.email)
     }
 }

@@ -10,8 +10,8 @@ describe('login to the moon front office', () => {
     it('connect with an user account', () => {
         homepage.clickConnect()
         user.connectButton()
-        user.emailConnect()
-        user.passConnect()
+        user.fillEmail()
+        user.fillPassword()
         user.keepConnect()
         user.submit()
         //user.fillInformations()

@@ -4,7 +4,8 @@
   "description": "This repository is used to store all the automated tests for the Moon Front office",
   "main": "index.js",
   "scripts": {
-    "test": "cypress-ntlm open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "author": "DIALLO Boubacar Siddy",
   "license": "ISC",
