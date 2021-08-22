@@ -4,7 +4,11 @@ import { homepage, user } from './authentication'
 
 describe('login via XHR request', () => {
     beforeEach(() => {
-        cy.request ({
+        homepage.authenticate()
+    })
+    it('connect with an user account', () => {
+        homepage.clickConnect()
+        /* cy.request ({
             method: 'POST',
             url: '/',
             body: {
@@ -13,9 +17,6 @@ describe('login via XHR request', () => {
             }
         }).then((response) => {
             expect(response.status).to.eq(200)
-        }) 
-    })
-    it('connect with an user account', () => {
-        homepage.clickConnect()
+        })  */
     })
 })
