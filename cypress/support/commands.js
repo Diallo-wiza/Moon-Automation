@@ -22,22 +22,20 @@
 //
 //
 // -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add("userlogin", () => {
-    let users;
-    beforeEach(function() {
-        cy.fixture('users').then((data) => {
-            users = data;
-            return users
-        })
-    })
-    it('Validate successful Login', () => {
-        homepage.authenticate()
-        homepage.clickConnect()
-        user.createAccountButton()
-        cy.get('[name="email"]').type(users.email)
-        cy.get('[name="password"]').type(users.password)
-        cy.get('[name="passwordConf"]').type(users.password)
-        user.clickOnCreate()
-    })
-  });
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })/* 
+
+
+
+// Cypress.Commands.add('authenticate', (email, password) => {
+//     // make login call to endpoint
+//     cy.request ({
+//         method: 'GET',
+//         url: 'https://back.sexy-template-yavin.sandbox.wizaplace.com/api/v1/users/authenticate',
+//         body: {
+//             email: email,
+//             password: password
+//         }
+//     }).then((response) => {
+//         expect(response.status).to.eq(200)
+//     }) 
+//   }) 

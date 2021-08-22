@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
-import { homepage, usersJson } from './authentication'
-import { user } from './authentication'
+import { homepage, user } from './authentication'
 
 describe('Login to the moon front office with a json file', function () { 
     let users;
