@@ -25,17 +25,22 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })/* 
 
 
+Cypress.Commands.add("getBySelector", (selector, ...args) => {
+    return cy.get(`${selector}`, ...args);
+  });
 
-// Cypress.Commands.add('authenticate', (email, password) => {
-//     // make login call to endpoint
-//     cy.request ({
-//         method: 'GET',
-//         url: 'https://back.sexy-template-yavin.sandbox.wizaplace.com/api/v1/users/authenticate',
-//         body: {
-//             email: email,
-//             password: password
-//         }
-//     }).then((response) => {
-//         expect(response.status).to.eq(200)
-//     }) 
-//   }) 
+//This will make our password not visible at all
+Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+if (options && options.sensitive) {
+    // turn off original log
+    options.log = false
+    // create our own log with masked message
+    Cypress.log({
+    $el: element,
+    name: 'type',
+    message: '*'.repeat(text.length),
+    })
+}
+
+return originalFn(element, text, options)
+})

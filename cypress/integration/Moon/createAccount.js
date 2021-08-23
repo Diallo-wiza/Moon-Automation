@@ -1,12 +1,9 @@
 /// <reference types="cypress" />
 
-import { homepage } from './authentication'
-import { user } from './authentication'
+import { homepage, user } from '../../support/PageObjects/authentication'
 
-describe('Homepage authentication required', () => {
+describe('Moon Front User creation ', () => {
     beforeEach(() => {
-    // Since we want to visit the same URL at the start of all our tests,
-    // we include it in our beforeEach function so that it runs before each test
     homepage.authenticate() 
     })
     it('create a user account', () => {

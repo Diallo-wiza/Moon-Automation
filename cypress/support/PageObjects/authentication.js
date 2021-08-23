@@ -75,27 +75,14 @@ export const user = {
           .type(Cypress.env("passAccount"))
     },
 
-    keepConnect() {
+    /* keepConnect() {
         cy.get('[id="keep-connection"]')
           .should('not.be.checked')
-        //  .check()
-    },
+    }, */
 
     submit() {
         cy.get('[id="submit-form"]')
           .should('be.visible')
           .click()
-    },
-
-    fillInformations() {
-        cy.get('[name="lastName"]')
-          .click()
-          .type('DIALLO')
-    }
-}
-
-export const usersJson = {
-    enterJsonMail() {
-        return cy.get('[name="email"]').type(this.data.email)
     }
 }

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { homepage, user } from './authentication'
+import { homepage, user } from '../../support/PageObjects/authentication'
 
 describe('Login to the moon front office with a json file', function () { 
     let users;
@@ -14,9 +14,9 @@ describe('Login to the moon front office with a json file', function () {
         homepage.authenticate()
         homepage.clickConnect()
         user.createAccountButton()
-        cy.get('[name="email"]').type(users.email)
-        cy.get('[name="password"]').type(users.password)
-        cy.get('[name="passwordConf"]').type(users.password)
+        cy.getBySelector('[name="email"]').type(users.email)
+        cy.getBySelector('[name="password"]').type(users.password, {sensitive: true})
+        cy.getBySelector('[name="passwordConf"]').type(users.password, {sensitive: true})
         user.clickOnCreate()
     })
 })
