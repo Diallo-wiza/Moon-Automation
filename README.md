@@ -30,3 +30,7 @@ It will install the latest version of Cypress for you and --save-dev saves the d
 Next step is just to run the following command, and the Cypress GUI will start:
 
 `npx cypress open`
+
+### 3. Cypress Dashboard Service
+link -> https://dashboard.cypress.io/projects/2dg86s/runs/2/overview
+![moonDash](https://user-images.githubusercontent.com/50830106/130757107-fa2bb157-ad32-4b23-935d-ea49183a4024.png)
